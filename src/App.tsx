@@ -1,7 +1,7 @@
+import { MainView } from "./views/MainView.tsx";
+
 export const App = () => {
   return (
-    <>
-        Hello Vite + React!
-    </>
-  )
-}
+    <MainView />
+  );
+};
