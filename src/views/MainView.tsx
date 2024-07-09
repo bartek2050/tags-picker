@@ -8,8 +8,7 @@ export const MainView = () => {
   return (
     <div className="ml-40 mt-40 flex gap-2">
       <div
-        className="flex flex-col justify-between items-center gap-2 shadow border-solid
-      border-2 border-gray-800/10 rounded w-14 px-7 py-1"
+        className="flex flex-col justify-between items-center gap-2 shadow-md rounded w-14 px-7 py-1"
       >
         <IconWrapper><FontAwesomeIcon icon={faCircleInfo} size="xl" /></IconWrapper>
         <IconWrapper><FontAwesomeIcon icon={faMessage} size="xl" /></IconWrapper>

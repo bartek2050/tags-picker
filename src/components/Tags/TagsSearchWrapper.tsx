@@ -1,10 +1,18 @@
 import { Header } from "../Header";
+import { SearchInput } from "../SearchInput.tsx";
 
 export const TagsSearchWrapper = () => {
   return (
-    <div className="shadow border-solid border-2 border-gray-800/10 rounded p-3 w-20 min-w-48">
-      <Header header={"Tagi"} />
-    </div>
-
+    <>
+      <div
+        className="shadow-md p-3 w-20 min-w-60 divide-y
+      divide-gray-800/10 divide-solid flex flex-col"
+      >
+        <div>
+          <Header header="Tagi" />
+          <SearchInput />
+        </div>
+      </div>
+    </>
   );
 };
