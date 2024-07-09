@@ -3,8 +3,11 @@ import { faMessage } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconWrapper } from "../components/IconWrapper.tsx";
 import { TagsSearchWrapper } from "../components/Tags/TagsSearchWrapper.tsx";
+import { useState } from "react";
 
 export const MainView = () => {
+  const [showTagsSearch, setShowTagsSearch] = useState(false);
+
   return (
     <div className="ml-40 mt-40 flex gap-2">
       <div
@@ -13,10 +16,12 @@ export const MainView = () => {
         <IconWrapper><FontAwesomeIcon icon={faCircleInfo} size="xl" /></IconWrapper>
         <IconWrapper><FontAwesomeIcon icon={faMessage} size="xl" /></IconWrapper>
         <IconWrapper><FontAwesomeIcon icon={faCog} size="xl" /></IconWrapper>
-        <IconWrapper><FontAwesomeIcon icon={faTag} size="xl" /></IconWrapper>
+        <button onClick={() => setShowTagsSearch(true)}>
+          <IconWrapper><FontAwesomeIcon icon={faTag} size="xl" /></IconWrapper>
+        </button>
         <IconWrapper><FontAwesomeIcon icon={faUserPlus} size="xl" /></IconWrapper>
       </div>
-      <TagsSearchWrapper />
+      <TagsSearchWrapper showTagSearch={showTagsSearch} setShowTags={(v) => setShowTagsSearch(v)} />
     </div>
   );
 };
