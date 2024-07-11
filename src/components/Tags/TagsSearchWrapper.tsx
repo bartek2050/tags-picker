@@ -3,6 +3,7 @@ import { SearchInput } from "../SearchInput.tsx";
 import classNames from "classnames";
 import { SelectedTagsWrapper } from "../Tags/SelectedTagsWrapper.tsx";
 import { CmsAiWrapper } from "../Tags/CmsAiWrapper.tsx";
+import { SelectionMeterWrapper } from "../Tags/SelectionMeterWrapper.tsx";
 
 export const TagsSearchWrapper = ({ showTagSearch, setShowTags }: {
   showTagSearch: boolean,
@@ -20,6 +21,7 @@ export const TagsSearchWrapper = ({ showTagSearch, setShowTags }: {
       </div>
       <SelectedTagsWrapper />
       <CmsAiWrapper />
+      <SelectionMeterWrapper />
     </div>
   );
 };
