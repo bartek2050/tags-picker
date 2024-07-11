@@ -1,7 +1,8 @@
 import { Header } from "../Header";
 import { SearchInput } from "../SearchInput.tsx";
 import classNames from "classnames";
-import { SelectedTags } from ".././Tags/SelectedTags.tsx";
+import { SelectedTagsWrapper } from "../Tags/SelectedTagsWrapper.tsx";
+import { CmsAiWrapper } from "../Tags/CmsAiWrapper.tsx";
 
 export const TagsSearchWrapper = ({ showTagSearch, setShowTags }: {
   showTagSearch: boolean,
@@ -17,7 +18,8 @@ export const TagsSearchWrapper = ({ showTagSearch, setShowTags }: {
         <Header header="Tagi" setShowTags={setShowTags} />
         <SearchInput />
       </div>
-      <SelectedTags />
+      <SelectedTagsWrapper />
+      <CmsAiWrapper />
     </div>
   );
 };
