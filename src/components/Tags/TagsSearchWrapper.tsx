@@ -1,6 +1,7 @@
 import { Header } from "../Header";
 import { SearchInput } from "../SearchInput.tsx";
 import classNames from "classnames";
+import { SelectedTags } from ".././Tags/SelectedTags.tsx";
 
 export const TagsSearchWrapper = ({ showTagSearch, setShowTags }: {
   showTagSearch: boolean,
@@ -16,7 +17,7 @@ export const TagsSearchWrapper = ({ showTagSearch, setShowTags }: {
         <Header header="Tagi" setShowTags={setShowTags} />
         <SearchInput />
       </div>
-      <div>ABC</div>
+      <SelectedTags />
     </div>
   );
 };
