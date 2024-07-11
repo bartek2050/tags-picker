@@ -16,6 +16,5 @@ export const CmsAiWrapper = () => {
         <span className="font-bold ml-2">Najbardziej popularne tagi</span>
       </div>
     </div>
-
   );
 };

@@ -9,7 +9,7 @@ export const TagsSearchWrapper = ({ showTagSearch, setShowTags }: {
   setShowTags: (v: boolean) => void
 }) => {
   return (
-    <div className={classNames("shadow-md p-3 w-20 min-w-60 divide-y divide-gray-800/10 divide-solid flex flex-col", {
+    <div className={classNames("shadow-md p-3 w-36 min-w-72 divide-y divide-gray-800/10 divide-solid flex flex-col", {
       block: showTagSearch,
       hidden: !showTagSearch
     })}
