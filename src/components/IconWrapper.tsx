@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import classNames from "classnames";
 
-
 type IconWrapperProps = {
   children: ReactNode;
   active?: boolean | undefined
