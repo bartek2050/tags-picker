@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
 export const SelectionMeterWrapper = () => {
-  const [selectedTags, setSelectedTags] = useState(["Maryla", "Przeboje", "Maryla", "Przeboje"]);
+  const [selectedTags, setSelectedTags] = useState(["Maryla", "Przeboje"]);
 
   const infoText = (selectedTags.length < 5)
     ? `Zbyt mało tagów. Dodaj jeszcze ${5 - selectedTags.length} aby poprawić widoczność artykułu`
@@ -19,7 +19,9 @@ export const SelectionMeterWrapper = () => {
       <div className="flex flex-row">
         <div className={`font-bold ${textColor}`}>{meterText}</div>
         <div className="flex flex-row gap-0.5 items-center ml-2">
-          {selectedTags.map((index) => <div key={index} className={`w-3 h-1 ${meterColor} rounded`} />)}
+          {selectedTags.map((_, index) => <div key={index} className={`w-3 h-1 ${meterColor} rounded`} />)}
+          {Array.from({ length: 5 - selectedTags.length }).map((_, index) =>
+            <div key={index} className={`w-3 h-1 bg-gray-500 rounded`} />)}
         </div>
       </div>
       <div className="text-gray-400 text-xs flex flex-row items-center gap-2 mt-2">
