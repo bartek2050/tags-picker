@@ -5,7 +5,10 @@ import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 export const SelectionMeterWrapper = () => {
   const [selectedTags, setSelectedTags] = useState(["Maryla", "Przeboje", "Maryla", "Przeboje"]);
 
-
+  const infoText = (selectedTags.length < 5)
+    ? `Zbyt mało tagów. Dodaj jeszcze ${5 - selectedTags.length} aby poprawić widoczność artykułu`
+    : "Dodałeś wystarczającą liczbę tagów";
+  
   return (
     <div className="pt-2">
       <div className="flex flex-row">
@@ -16,6 +19,7 @@ export const SelectionMeterWrapper = () => {
       </div>
       <div className="text-gray-400 text-xs flex flex-row items-center gap-2 mt-2">
         <FontAwesomeIcon icon={faCircleInfo} size={"lg"} />
+        <div>{infoText}</div>
       </div>
     </div>
 
