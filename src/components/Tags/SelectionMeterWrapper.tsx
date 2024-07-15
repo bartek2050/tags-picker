@@ -8,13 +8,18 @@ export const SelectionMeterWrapper = () => {
   const infoText = (selectedTags.length < 5)
     ? `Zbyt mało tagów. Dodaj jeszcze ${5 - selectedTags.length} aby poprawić widoczność artykułu`
     : "Dodałeś wystarczającą liczbę tagów";
-  
+
+  const isTagsMeterGreen = selectedTags.length > 3;
+  const meterColor = isTagsMeterGreen ? "bg-lime-600" : "bg-rose-700";
+  const textColor = isTagsMeterGreen ? "text-lime-600" : "text-rose-700";
+  const meterText = isTagsMeterGreen ? "Dobrze" : "Słabo";
+
   return (
     <div className="pt-2">
       <div className="flex flex-row">
-        <div className="text-lime-600 font-bold">Dobrze</div>
+        <div className={`font-bold ${textColor}`}>{meterText}</div>
         <div className="flex flex-row gap-0.5 items-center ml-2">
-          {selectedTags.map((index) => <div key={index} className="w-3 h-1 bg-lime-600 rounded" />)}
+          {selectedTags.map((index) => <div key={index} className={`w-3 h-1 ${meterColor} rounded`} />)}
         </div>
       </div>
       <div className="text-gray-400 text-xs flex flex-row items-center gap-2 mt-2">
