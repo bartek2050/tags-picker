@@ -10,7 +10,7 @@ type HeaderProps = {
 export const Header: React.FC<HeaderProps> = ({ header, setShowTags }) => {
   return (
     <div className="flex justify-between pb-2">
-      <h1 className="h1 font-bold text-xl">{header}</h1>
+      <h1 className="h1 font-bold text-2xl">{header}</h1>
       <button onClick={() => setShowTags(false)}><FontAwesomeIcon icon={faX} size="sm" /></button>
     </div>
   );
