@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
 export const SelectionMeterWrapper = () => {
-  const [selectedTags, setSelectedTags] = useState(["Maryla", "Przeboje"]);
+  const [selectedTags, setSelectedTags] = useState(["Maryla", "Przeboje", "Test", "Albert"]);
 
   const infoText = (selectedTags.length < 5)
     ? `Zbyt mało tagów. Dodaj jeszcze ${5 - selectedTags.length} aby poprawić widoczność artykułu`
