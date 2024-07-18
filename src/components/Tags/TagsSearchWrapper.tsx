@@ -14,7 +14,7 @@ type TagsSearchWrapperProps = {
 export const TagsSearchWrapper: React.FC<TagsSearchWrapperProps> = ({ showTagSearch, setShowTags }) => {
   return (
     <div
-      className={classNames("shadow-md p-3 w-36 rounded min-w-72 divide-y divide-gray-800/10 divide-solid flex flex-col", {
+      className={classNames("shadow-md p-3 w-36 rounded min-w-80 divide-y divide-gray-800/10 divide-solid flex flex-col", {
         block: showTagSearch,
         hidden: !showTagSearch
       })}
