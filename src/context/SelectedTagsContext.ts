@@ -1,6 +1,14 @@
-import React, { createContext, SetStateAction } from "react";
+import { createContext } from "react";
 
-type SelectedTagsContext = [string[], React.Dispatch<SetStateAction<string[]>>];
-
-export const SelectedTagsContext = createContext<SelectedTagsContext>([[""], () => {
-}]);
+type SelectedTagsContextType = {
+  selectedTags: string[];
+  addTags: (tag: string) => void;
+  deleteTags: (tag: string) => void;
+};
+export const SelectedTagsContext = createContext<SelectedTagsContextType>({
+  selectedTags: [""],
+  addTags: () => {
+  },
+  deleteTags: () => {
+  }
+});

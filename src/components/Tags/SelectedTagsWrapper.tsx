@@ -3,7 +3,8 @@ import { useContext } from "react";
 import { SelectedTagsContext } from "../../context/SelectedTagsContext.ts";
 
 export const SelectedTagsWrapper = () => {
-  const [selectedTags] = useContext(SelectedTagsContext);
+  const { selectedTags } = useContext(SelectedTagsContext);
+
 
   return (
     <div className="py-4 flex flex-wrap gap-2">
