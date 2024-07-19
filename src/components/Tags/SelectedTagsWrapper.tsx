@@ -7,7 +7,10 @@ export const SelectedTagsWrapper = () => {
 
   return (
     <div className="py-4 flex flex-wrap gap-2">
-      {selectedTags.map((e) => <Chip key={e}>{e}</Chip>)}
+      {selectedTags.length === 0 ?
+        <span className="text-gray-400 text-sm">Brak wybranych tagów</span> : selectedTags.map((e) =>
+          <Chip
+            key={e}>{e}</Chip>)}
     </div>
   );
 };
