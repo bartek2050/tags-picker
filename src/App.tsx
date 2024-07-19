@@ -3,10 +3,13 @@ import { SelectedTagsContext } from "./context/SelectedTagsContext.ts";
 import { useState } from "react";
 
 export const App = () => {
-  const [selectedTags] = useState(["Maryla", "Gerald", "Edek", "Albert", "Jan"]);
+  const [selectedTags, setSelectedTags] = useState(["Maryla", "Gerald", "Edek", "Albert", "Jan"]);
   const addTags = () => console.log("Add TAGS");
-  const deleteTags = () => console.log("Delete TAGS");
-
+  const deleteTags = (tag: string) => {
+    const filteredTags = selectedTags.filter((selectedTag) => selectedTag !== tag);
+    setSelectedTags(filteredTags);
+  };
+  console.log(selectedTags);
   return (
     <SelectedTagsContext.Provider value={{ selectedTags, addTags, deleteTags }}>
       <MainView />
