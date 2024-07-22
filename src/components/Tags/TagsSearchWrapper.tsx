@@ -5,6 +5,7 @@ import { SelectedTagsWrapper } from "../Tags/SelectedTagsWrapper.tsx";
 import { CmsAiWrapper } from "../Tags/CmsAiWrapper.tsx";
 import { SelectionMeterWrapper } from "../Tags/SelectionMeterWrapper.tsx";
 import React, { useState } from "react";
+import { TAGS } from "../../constants/tags.ts";
 
 type TagsSearchWrapperProps = {
   showTagSearch: boolean | undefined,
@@ -14,7 +15,16 @@ type TagsSearchWrapperProps = {
 export const TagsSearchWrapper: React.FC<TagsSearchWrapperProps> = ({ showTagSearch, setShowTags }) => {
   const [focused, setFocused] = useState(false);
 
-  console.log(focused);
+  const tagsList = TAGS.map((tag) => (
+    <li key={tag.id} className="w-full border-b border-gray-200 rounded-t-lg">
+      <div className="flex items-center ps-3">
+        <input id={tag.name} type="checkbox" value=""
+               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+        <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900">{tag.name}</label>
+      </div>
+    </li>
+  ));
+
   return (
     <div
       className={classNames("shadow-md p-3 w-36 rounded min-w-80 divide-y divide-gray-800/10 divide-solid flex flex-col", {
@@ -26,14 +36,17 @@ export const TagsSearchWrapper: React.FC<TagsSearchWrapperProps> = ({ showTagSea
         <Header header="Tagi" setShowTags={setShowTags} />
         <SearchInput setFocus={(e) => setFocused(e)} />
       </div>
-      <div className={classNames({
-        block: !focused,
-        hidden: focused
-      })}>
-        <SelectedTagsWrapper />
-        <CmsAiWrapper />
-        <SelectionMeterWrapper />
-      </div>
+      {!focused ? (
+        <ul className="text-sm font-medium text-gray-900 bg-white">
+          {tagsList}
+        </ul>
+      ) : (
+        <div className="divide-y divide-gray-800/10 divide-solid">
+          <SelectedTagsWrapper />
+          <CmsAiWrapper />
+          <SelectionMeterWrapper />
+        </div>
+      )}
     </div>
   );
 };
