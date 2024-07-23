@@ -9,7 +9,7 @@ export const App = () => {
     const filteredTags = selectedTags.filter((selectedTag) => selectedTag !== tag);
     setSelectedTags(filteredTags);
   };
-  console.log(selectedTags);
+
   return (
     <SelectedTagsContext.Provider value={{ selectedTags, addTags, deleteTags }}>
       <MainView />
