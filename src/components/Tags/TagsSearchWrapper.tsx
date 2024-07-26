@@ -14,7 +14,7 @@ type TagsSearchWrapperProps = {
 
 export const TagsSearchWrapper: React.FC<TagsSearchWrapperProps> = ({ showTagSearch, setShowTags }) => {
   const [focused, setFocused] = useState(false);
-
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <div
@@ -25,19 +25,16 @@ export const TagsSearchWrapper: React.FC<TagsSearchWrapperProps> = ({ showTagSea
     >
       <div className="mt-2">
         <Header header="Tagi" setShowTags={setShowTags} />
-        <SearchInput setFocus={(e) => setFocused(e)} />
+        <SearchInput setFocus={(v) => setFocused(v)} inputValue={inputValue} setInputValue={(v) => setInputValue(v)} />
       </div>
-      {!focused ? (
-        <ul className="text-sm font-medium text-gray-900 bg-white max-h-80 overflow-scroll">
-          <TagsListElement />
-        </ul>
-      ) : (
-        <div className="divide-y divide-gray-800/10 divide-solid">
-          <SelectedTagsWrapper />
-          <CmsAiWrapper />
-          <SelectionMeterWrapper />
-        </div>
-      )}
+      <ul className="text-sm font-medium text-gray-900 bg-white max-h-80 overflow-scroll">
+        <TagsListElement inputValue={inputValue} />
+      </ul>
+      <div className="divide-y divide-gray-800/10 divide-solid">
+        <SelectedTagsWrapper />
+        <CmsAiWrapper />
+        <SelectionMeterWrapper />
+      </div>
     </div>
   );
 };

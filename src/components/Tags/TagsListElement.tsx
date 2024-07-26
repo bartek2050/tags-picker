@@ -1,8 +1,14 @@
 import { TAGS } from "../../constants/tags.ts";
 import React, { useState } from "react";
 
-export const TagsListElement = () => {
+type TagsListElementProps = {
+  inputValue: string
+}
+
+export const TagsListElement: React.FC<TagsListElementProps> = ({ inputValue }) => {
   const [tagsToAdd, setTagsToAdd] = useState<string[]>([]);
+
+  console.log(inputValue);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const checkedId = e.target.id;
@@ -15,7 +21,7 @@ export const TagsListElement = () => {
   };
 
   return (
-    TAGS.map((tag) => (
+    TAGS.filter((tag) => tag.name.toLowerCase().includes(inputValue.toLowerCase())).map((tag) => (
       <li key={tag.id} className="w-full border-b border-gray-200 rounded-t-lg">
         <div className="flex items-center ps-3">
           <input id={tag.name} type="checkbox" value="" onChange={(e) => handleChange(e)}
