@@ -4,11 +4,9 @@ import { useState } from "react";
 
 export const App = () => {
   const [selectedTags, setSelectedTags] = useState(["Maryla", "Gerald", "Edek", "Albert", "Jan"]);
+
   const addTags = () => console.log("Add TAGS");
-  const deleteTags = (tag: string) => {
-    const filteredTags = selectedTags.filter((selectedTag) => selectedTag !== tag);
-    setSelectedTags(filteredTags);
-  };
+  const deleteTags = (tag: string) => setSelectedTags(selectedTags.filter(t => t !== tag));
 
   return (
     <SelectedTagsContext.Provider value={{ selectedTags, addTags, deleteTags }}>
