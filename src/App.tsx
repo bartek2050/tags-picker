@@ -3,7 +3,7 @@ import { SelectedTagsContext } from "./context/SelectedTagsContext.ts";
 import { useState } from "react";
 
 export const App = () => {
-  const [selectedTags, setSelectedTags] = useState(["Maryla", "Gerald", "Edek", "Albert", "Jan"]);
+  const [selectedTags, setSelectedTags] = useState(["Barcelona"]);
 
   const addTags = () => console.log("Add TAGS");
   const deleteTags = (tag: string) => setSelectedTags(selectedTags.filter(t => t !== tag));

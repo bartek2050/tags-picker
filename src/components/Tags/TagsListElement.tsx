@@ -8,7 +8,7 @@ type TagsListElementProps = {
 export const TagsListElement: React.FC<TagsListElementProps> = ({ inputValue }) => {
   const [tagsToAdd, setTagsToAdd] = useState<string[]>([]);
 
-  console.log(inputValue);
+  console.log(tagsToAdd);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const checkedId = e.target.id;
