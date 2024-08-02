@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { SelectedTagsContext } from "../../context/SelectedTagsContext.ts";
 
-export const SelectionMeterWrapper = () => {
+export const TagsSelectionMeterWrapper = () => {
   const { selectedTags } = useContext(SelectedTagsContext);
 
   const infoText = (selectedTags.length < 5)

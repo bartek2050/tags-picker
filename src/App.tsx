@@ -5,7 +5,7 @@ import { useState } from "react";
 export const App = () => {
   const [selectedTags, setSelectedTags] = useState(["Barcelona"]);
 
-  const addTags = () => console.log("Add TAGS");
+  const addTags = (tags: string[]) => setSelectedTags(() => [...selectedTags, ...tags]);
   const deleteTags = (tag: string) => setSelectedTags(selectedTags.filter(t => t !== tag));
 
   return (

@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 type SelectedTagsContextType = {
   selectedTags: string[];
-  addTags: (tag: string) => void;
+  addTags: (tags: string[]) => void;
   deleteTags: (tag: string) => void;
 };
 export const SelectedTagsContext = createContext<SelectedTagsContextType>({

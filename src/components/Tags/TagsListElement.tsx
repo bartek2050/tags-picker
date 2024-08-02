@@ -1,14 +1,13 @@
 import { TAGS } from "../../constants/tags.ts";
-import React, { useState } from "react";
+import React from "react";
 
 type TagsListElementProps = {
-  inputValue: string
+  inputValue: string;
+  tagsToAdd: string[];
+  setTagsToAdd: (tags: string[]) => void
 }
 
-export const TagsListElement: React.FC<TagsListElementProps> = ({ inputValue }) => {
-  const [tagsToAdd, setTagsToAdd] = useState<string[]>([]);
-
-  console.log(tagsToAdd);
+export const TagsListElement: React.FC<TagsListElementProps> = ({ inputValue, tagsToAdd, setTagsToAdd }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const checkedId = e.target.id;
