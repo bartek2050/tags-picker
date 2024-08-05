@@ -19,6 +19,10 @@ export const TagsListElement: React.FC<TagsListElementProps> = ({ inputValue, ta
     }
   };
 
+  if (TAGS.filter((tag) => tag.name.toLowerCase().includes(inputValue.toLowerCase())).length === 0) {
+    return <p className="text-gray-400 text-sm pl-6 my-3">Brak pasujących tagów</p>;
+  }
+
   return (
     TAGS.filter((tag) => tag.name.toLowerCase().includes(inputValue.toLowerCase())).map((tag) => (
       <li key={tag.id} className="w-full border-b border-gray-200 rounded-t-lg">
