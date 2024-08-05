@@ -23,7 +23,7 @@ export const MainView = () => {
   }, []);
 
   return (
-    <div className="ml-40 mt-40 flex gap-2 font-arial">
+    <div className="ml-40 mt-40 flex gap-2 font-arial relative">
       <div
         className="flex flex-col justify-between items-center gap-2 shadow-md rounded w-14 px-7 py-1 h-full"
       >
