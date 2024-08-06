@@ -6,6 +6,15 @@
   "printWidth": 120,
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
-  "importOrder": ["^@", "^[^/]*$", "<THIRD_PARTY_MODULES>", "^../.*", "^[.]"],
-  "plugins": ["@ianvs/prettier-plugin-sort-imports"]
+  "importOrder": [
+    "^@",
+    "^[^/]*$",
+    "<THIRD_PARTY_MODULES>",
+    "^../.*",
+    "^[.]"
+  ],
+  "plugins": [
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ]
 }
