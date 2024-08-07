@@ -1,5 +1,6 @@
 import { TAGS } from "../../constants/tags.ts";
-import React from "react";
+import React, { useContext } from "react";
+import { SelectedTagsContext } from "../../context/SelectedTagsContext.ts";
 
 type TagsListElementProps = {
   inputValue: string;
@@ -8,6 +9,7 @@ type TagsListElementProps = {
 }
 
 export const TagsListElement: React.FC<TagsListElementProps> = ({ inputValue, tagsToAdd, setTagsToAdd }) => {
+  const { selectedTags } = useContext(SelectedTagsContext);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const checkedId = e.target.id;
@@ -23,8 +25,11 @@ export const TagsListElement: React.FC<TagsListElementProps> = ({ inputValue, ta
     return <p className="text-gray-400 text-sm pl-6 my-3">Brak pasujących tagów</p>;
   }
 
+  //selected tags filtered out from main TAGS array
+  const uniqueTagsList = TAGS.filter(tag => !selectedTags.includes(tag.name));
+
   return (
-    TAGS.filter((tag) => tag.name.toLowerCase().includes(inputValue.toLowerCase())).map((tag) => (
+    uniqueTagsList.filter((tag) => tag.name.toLowerCase().includes(inputValue.toLowerCase())).map((tag) => (
       <li key={tag.id} className="w-full border-b border-gray-200 rounded-t-lg">
         <div className="flex items-center ps-3">
           <input id={tag.name} type="checkbox" value="" onChange={(e) => handleChange(e)}

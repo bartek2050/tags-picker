@@ -17,7 +17,7 @@ export const TagsList: React.FC<TagsListProps> = ({ inputValue, setInputValue })
 
   return (
     <div>
-      <ul className="text-sm font-medium text-gray-900 bg-white max-h-80 overflow-scroll">
+      <ul className="text-sm font-medium text-gray-900 bg-white max-h-80 overflow-y-scroll">
         <TagsListElement inputValue={inputValue} tagsToAdd={tagsToAdd} setTagsToAdd={(tags) => setTagsToAdd(tags)} />
       </ul>
       <button type="button" disabled={tagsToAdd.length === 0} className="w-full text-white bg-blue-700 hover:bg-blue-800
