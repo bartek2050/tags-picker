@@ -1,5 +1,5 @@
 import { Header } from "../Header";
-import { SearchInput } from "../SearchInput.tsx";
+import { SearchInput } from "..//Tags/SearchInput.tsx";
 import classNames from "classnames";
 import { SelectedTagsWrapper } from "../Tags/SelectedTagsWrapper.tsx";
 import { CmsAiWrapper } from "../Tags/CmsAiWrapper.tsx";

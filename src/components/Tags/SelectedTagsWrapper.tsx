@@ -1,4 +1,4 @@
-import { Chip } from "../Chip.tsx";
+import { Chip } from "../Tags/Chip.tsx";
 import { useContext } from "react";
 import { SelectedTagsContext } from "../../context/SelectedTagsContext.ts";
 

@@ -1,7 +1,7 @@
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
-import { SelectedTagsContext } from "../context/SelectedTagsContext.ts";
+import { SelectedTagsContext } from "../../context/SelectedTagsContext.ts";
 
 export const Chip = ({ children }: { children: string }) => {
   const { deleteTags } = useContext(SelectedTagsContext);
