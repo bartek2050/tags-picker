@@ -17,6 +17,7 @@ Project is created with:
 
 * Vite
 * React (TS)
+* Tailwind
 * Jest
 
 ## Setup
